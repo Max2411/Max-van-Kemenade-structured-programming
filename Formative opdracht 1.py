@@ -40,18 +40,15 @@ def momentVerschil():
         lst2.pop(0)
         if len(lst1)==0 or len(lst2)==0:
             break
-
-
-
     print(i+1)
-    '''
-        for letter2 in zin2:
-            if letter==letter2:
-                i += 1
-            else:
-
-                break
-    print(i)
-    '''
     return
-momentVerschil()
+
+def count():
+    lst=[0,9,8,2,2,6,7,8,9,1,3,4,5,2,3,4,5,6,7,8,9,0]
+    getal=int(input('Voor getal in dat u zoekt in de lijst: '))
+    aantalGetal= lst.count(getal)
+    print('Het getal {} komt {} keer voor in de lijst.'.format(getal,aantalGetal))
+    return
+
+count()
+#momentVerschil()
