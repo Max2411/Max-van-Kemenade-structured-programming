@@ -1,16 +1,20 @@
-'Ik heb sommige delen samen gedaan met Jelle.'
-
+#'Ik heb sommige delen samen gedaan met Jelle.'
+#Opdracht 1
+import random
 def pyramide():
+    'bron; https://realpython.com/python-range/, stukje: Decrementing With range()'
     groote = int(input('voor groote van de pyramide in: '))
     print('Dit is de groote van uw pyramide: ',groote)
+
     for i in range(groote):
         print('*'*(i+1))
-    for i in range(hoogte):
-        print('*' * (item + 1))
+    for i in range(groote-1, 0,-1):
+        print('*'*(i))
 
     return groote
 
-pyramide()
+#pyramide()
+#Opdracht 2
 def verschilLengte():
     zin1 = input('Typ hier zin 1: ')
     zin2 = input('Typ hier zin 2: ')
@@ -43,7 +47,7 @@ def momentVerschil():
             break
     print(i+1)
     return
-
+#Opdracht 3
 def count(lst):
 
     getal=int(input('Voor getal in dat u zoekt in de lijst: '))
@@ -83,7 +87,94 @@ def binairVerschil(lst):
     else:
         print("Er zijn meer nullen dan éénen en er zijn meer dan 12 nullen")
     return
-binairVerschil([0,0,1,0,1,1,1,0,0,1,0,1,0,1,0,1,0,0,0,0,0,1,1])
+#binairVerschil([0,0,1,0,1,1,1,0,0,1,0,1,0,1,0,1,0,0,0,0,0,1,1])
 #grootsteVerschil()
 #count([0,9,8,2,2,6,7,8,9,1,3,4,5,2,3,4,5,6,7,8,9,0])
 #momentVerschil()
+
+#Opdracht 4
+
+#Opdracht 5
+def sorteren():
+    lst= [0,9,8,2,2,6,7,8,9,1,3,4,5,2,3,4,5,6,7,8,9,0]
+    i = 0
+    while True:
+        if i == len(lst)-1:
+            break
+        if lst[i]>lst[i+1]:
+            lst[i], lst[i+1] = lst[i+1], lst[i]
+            i = 0
+        else:
+            i +=1
+    print(lst)
+
+#sorteren()
+#Opdracht 6
+def gemiddelde():
+    cijferlst = [0,9,8,2,2,6,7,8,9,1,3,4,5,2,3,4,5,6,7,8,9,0]
+
+    aantalgetallen = 0
+    cijfer = 0
+#    while True:
+#        if len(cijferlst)== 0:
+#            break
+#        else:
+#            cijfer= cijfer+cijferlst[0]
+#            aantalgetallen+=1
+#            cijferlst.remove(0)
+#    print(cijfer/i)
+
+#
+#gemiddelde()
+
+#Opdracht 7
+def gokken():
+    lst=[1,2,3,4,5,6,7,8,9,10]
+    gok=int(input("Voor een getal tussen 1 en 10 in: "))
+    randomNummer= random.choice(lst)
+    while True:
+        if gok == randomNummer:
+            print("Je hebt goed gegokt.")
+            return True
+        else:
+            print('je hebt het niet goed')
+            gok = int(input("Voer volgende gok in tussen 1 en 10: "))
+#gokken()
+
+#Opdracht 8
+#Opdracht 9
+#Opdracht 10
+"""
+def Fibonaci():
+    '''
+    De rij van Fibonacci is genoemd naar Leonardo van Pisa, bijgenaamd Fibonacci, die de rij noemt
+    in zijn boek Liber abaci uit 1202. De rij begint met 0 en 1 en vervolgens is elk
+    volgende element van de rij steeds de som van de twee voorgaande elementen. Bij de rij gebruiken we
+    de notatie fn voor het aangeven van het n-de element van de rij. f9 is
+    bijvoorbeeld gelijk aan 34. De eerste elementen van de rij zijn dan als volgt:
+    0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584
+    Implementeer een functie die fn uitrekent gegeven integer n. De functie moet recursief zijn.
+    '''
+    fn= int(input("Voor het getal in."))
+    lst= [0,1]
+    i=0
+    if i==i:
+        newItem=lst[i]+lst[i+1]
+        lst.append(newItem)
+        i+=1
+    print("Op plek {} is het getal {}".format(fn,lst[i]))
+Fibonaci()
+"""
+#Opdracht 11
+#Opdracht 12
+def fizzbuzz():
+    for i in range(1,100):
+        if i%3==0 and i%5==0:
+            print('fizzbuzz')
+        elif i%3==0:
+            print('fizz')
+        elif i%5==0:
+            print('buzz')
+        else:
+            print(i)
+fizzbuzz()
