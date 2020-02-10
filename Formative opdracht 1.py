@@ -93,10 +93,38 @@ def binairVerschil(lst):
 #momentVerschil()
 
 #Opdracht 4
+# Bron1: https://www.educative.io/edpresso/how-do-you-reverse-a-string-in-python
+# Bron2: https://www.geeksforgeeks.org/python-program-to-convert-a-list-to-string/
+def reverseString():
+    word= input("Typ the word you want to reverse: ")
+    lenght=len(word)
+    reveserdWord=word[lenght::-1]
+    print(reveserdWord)
 
+def reverseString2():
+    word= input("Typ the word you want to reverse: ")
+    rWord=""
+    reverseInLst=[]
+    i=len(word)
+
+    while i>0:
+        reverseInLst+=word[i-1]
+        i=i-1
+
+    for letter in reverseInLst:
+        rWord+=letter
+    print("Your word Reversed is: {}".format(rWord))
+
+
+
+reverseString2()
+
+
+
+#reverseString()
 #Opdracht 5
 def sorteren():
-    lst= [0,9,8,2,2,6,7,8,9,1,3,4,5,2,3,4,5,6,7,8,9,0]
+    lst= [0,7,8,2,2,6,7,8,7,1,3,4,5,2,3,4,5,6,7,8,9,0]
     i = 0
     while True:
         if i == len(lst)-1:
@@ -108,27 +136,28 @@ def sorteren():
             i +=1
     print(lst)
 
-#sorteren()
+sorteren()
 #Opdracht 6
 def gemiddelde():
     cijferlst = [0,9,8,2,2,6,7,8,9,1,3,4,5,2,3,4,5,6,7,8,9,0]
+    som= sum(cijferlst)
 
-    aantalgetallen = 0
-    cijfer = 0
-#    while True:
-#        if len(cijferlst)== 0:
-#            break
-#        else:
-#            cijfer= cijfer+cijferlst[0]
-#            aantalgetallen+=1
-#            cijferlst.remove(0)
-#    print(cijfer/i)
+    aantal = len(cijferlst)
+    print("het gemiddelde van de cijferlijst = {}".format(som/aantal))
 
-#
-#gemiddelde()
+
+gemiddelde()
+def gemiddeldeMultipleLists():
+    lst1=[0,9,8,2,2,6,7,8,9,1,3,4,5,2,3,4,5,6,7,8,9,0]
+    lst2=[4,8,6,7,2,16,7,7,3,7,1,7,6,4,2,3,1,4,9,2,8,3]
+    CombinedLst= lst1+lst2
+    som=sum(CombinedLst)
+    aantal=len(CombinedLst)
+    print("The average number from all the numbers of the list = {}".format(som/aantal))
+gemiddeldeMultipleLists()
 
 #Opdracht 7
-def gokken():
+def gokken(): # bron: https://www.programiz.com/python-programming/examples/random-number
     lst=[1,2,3,4,5,6,7,8,9,10]
     gok=int(input("Voor een getal tussen 1 en 10 in: "))
     randomNummer= random.choice(lst)
@@ -177,4 +206,4 @@ def fizzbuzz():
             print('buzz')
         else:
             print(i)
-fizzbuzz()
+#fizzbuzz()
