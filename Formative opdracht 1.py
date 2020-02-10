@@ -117,7 +117,7 @@ def reverseString2():
 
 
 
-reverseString2()
+#reverseString2()
 
 
 
@@ -146,7 +146,7 @@ def gemiddelde():
     print("het gemiddelde van de cijferlijst = {}".format(som/aantal))
 
 
-gemiddelde()
+#gemiddelde()
 def gemiddeldeMultipleLists():
     lst1=[0,9,8,2,2,6,7,8,9,1,3,4,5,2,3,4,5,6,7,8,9,0]
     lst2=[4,8,6,7,2,16,7,7,3,7,1,7,6,4,2,3,1,4,9,2,8,3]
@@ -154,7 +154,7 @@ def gemiddeldeMultipleLists():
     som=sum(CombinedLst)
     aantal=len(CombinedLst)
     print("The average number from all the numbers of the list = {}".format(som/aantal))
-gemiddeldeMultipleLists()
+#gemiddeldeMultipleLists()
 
 #Opdracht 7
 def gokken(): # bron: https://www.programiz.com/python-programming/examples/random-number
@@ -171,6 +171,31 @@ def gokken(): # bron: https://www.programiz.com/python-programming/examples/rand
 #gokken()
 
 #Opdracht 8
+def compressie(): 
+    file= open('tekst.txt','r')
+    tekst=file.readlines()
+    list=[]
+    compres = ""
+    for rule in tekst:
+        for letter in rule:
+            list.append(letter)
+    file.close()
+    while '\n' in list:
+        list.remove('\n')
+    while' ' in list:
+        list.remove(' ')
+    for item in list:
+        compres+=item
+    file= open("compression.txt","w")
+    file.write(compres)
+    file.close()
+
+
+
+
+
+
+compressie()
 #Opdracht 9
 #Opdracht 10
 """
