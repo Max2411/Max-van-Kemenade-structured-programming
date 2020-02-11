@@ -88,7 +88,7 @@ def binairVerschil(lst):
         print("Er zijn meer nullen dan éénen en er zijn meer dan 12 nullen")
     return
 #binairVerschil([0,0,1,0,1,1,1,0,0,1,0,1,0,1,0,1,0,0,0,0,0,1,1])
-#grootsteVerschil()
+grootsteVerschil()
 #count([0,9,8,2,2,6,7,8,9,1,3,4,5,2,3,4,5,6,7,8,9,0])
 #momentVerschil()
 
@@ -126,9 +126,7 @@ def reverseString2():
 def sorteren():
     lst= [0,7,8,2,2,6,7,8,7,1,3,4,5,2,3,4,5,6,7,8,9,0]
     i = 0
-    while True:
-        if i == len(lst)-1:
-            break
+    while i != len(lst)-1:
         if lst[i]>lst[i+1]:
             lst[i], lst[i+1] = lst[i+1], lst[i]
             i = 0
@@ -197,6 +195,7 @@ def compressie():
 
 compressie()
 #Opdracht 9
+
 #Opdracht 10
 """
 def Fibonaci():
