@@ -24,13 +24,9 @@ def playerGuessVScomputer():
                 else:
                     print("Your guess {}.\n {} white pins, {} black pins.".format(guessTuple, white, black))
                     print("------------------------------------")# maakt de console overzichtelijker.
-
-
-
             else:
                 print("GAME OVER!")
                 break
-
         else:
             print("The lenght of your guess is not 4.\n Guess again with code from 4 letters of the colour code you want to guess.")
 
@@ -48,30 +44,33 @@ def computerGuessVSplayer():
     print(guess)
 
     tries=0
-    while guess!=correctAns:
-
-        black,white=feedback(guess,correctAns)
-        print(black," black")
-        print(white,"white")
-        for item in possibilitie:
-
-            blackP,whiteP=feedback(item,guess)
-            if black!=blackP or white!=whiteP:
-                possibilitie.remove(item)
-
-        tries += 1
-        print(possibilitie)
-
-        print(len(possibilitie))
-        print(guess)
-        if guess==correctAns:
-            print("gg")
+    while True:
+        if guess == correctAns:
+            print("-----------")
+            print(guess)
+            print("GG, it took {}".format(tries))
+            print("----------")
             break
-        guess = random.choice(possibilitie)
+        else:
+            black,white=feedback(guess,correctAns)
+            print(black," black")
+            print(white,"white")
+            for item in possibilitie:
+
+                blackP,whiteP=feedback(item,guess)
+                if black!=blackP or white!=whiteP:
+                    possibilitie.remove(item)
+
+            tries += 1
+            print(possibilitie)
+
+            print(len(possibilitie))
+            print(guess)
+            guess = random.choice(possibilitie)
 
 
-    print(tries)
+
     return
-
+computerGuessVSplayer()
 
 
