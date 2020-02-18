@@ -15,7 +15,7 @@ def playerGuessVScomputer():
         if len(guess)==4:
             guessTuple=(guess[0],guess[1],guess[2],guess[3])
 
-            if  rounds<10:
+            if  rounds<11: #Van "<10" naar "<11" omdat je anders maar 9 ronden hebt
                 black,white=feedback(guessTuple,correctAns)
                 rounds += 1
                 if black == 4:
@@ -24,9 +24,13 @@ def playerGuessVScomputer():
                 else:
                     print("Your guess {}.\n {} white pins, {} black pins.".format(guessTuple, white, black))
                     print("------------------------------------")# maakt de console overzichtelijker.
+
+
+
             else:
                 print("GAME OVER!")
                 break
+
         else:
             print("The lenght of your guess is not 4.\n Guess again with code from 4 letters of the colour code you want to guess.")
 
@@ -44,33 +48,30 @@ def computerGuessVSplayer():
     print(guess)
 
     tries=0
-    while True:
-        if guess == correctAns:
-            print("-----------")
-            print(guess)
-            print("GG, it took {}".format(tries))
-            print("----------")
+    while guess!=correctAns:
+
+        black,white=feedback(guess,correctAns)
+        print(black," black")
+        print(white,"white")
+        for item in possibilitie:
+
+            blackP,whiteP=feedback(item,guess)
+            if black!=blackP or white!=whiteP:
+                possibilitie.remove(item)
+
+        tries += 1
+        print(possibilitie)
+
+        print(len(possibilitie))
+        print(guess)
+        if guess==correctAns:
+            print("gg")
             break
-        else:
-            black,white=feedback(guess,correctAns)
-            print(black," black")
-            print(white,"white")
-            for item in possibilitie:
-
-                blackP,whiteP=feedback(item,guess)
-                if black!=blackP or white!=whiteP:
-                    possibilitie.remove(item)
-
-            tries += 1
-            print(possibilitie)
-
-            print(len(possibilitie))
-            print(guess)
-            guess = random.choice(possibilitie)
+        guess = random.choice(possibilitie)
 
 
-
+    print(tries)
     return
-computerGuessVSplayer()
+
 
 
