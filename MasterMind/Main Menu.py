@@ -1,4 +1,4 @@
-from mastermind import playerGuessVScomputer
+from playerGuesses import playerGuessVScomputer
 from theSimpleStratWithRandom import computerGuessVSplayer
 from compairFirstItemAlgoritme import delFirstStrat
 from RandomAlgoritme import randomWithoutRepeatGuess
