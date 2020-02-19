@@ -4,7 +4,7 @@ from possibilities import possibilities
 from Feedback import feedback
 from correctAnswer import answerInput
 from correctAnswer import compair
-from RandAns import Answer
+#from RandAns import Answer #for testing
 
 
 def computerGuessVSplayer():# gem is 4.584 with 1000 tries

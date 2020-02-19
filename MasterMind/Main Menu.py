@@ -1,8 +1,8 @@
 from mastermind import playerGuessVScomputer
 from theSimpleStratWithRandom import computerGuessVSplayer
-from algroritme2_0 import delFirstStrat
-from algoritme1_0 import randomWithoutRepeatGuess
-#from algoritme3_0
+from compairFirstItemAlgoritme import delFirstStrat
+from RandomAlgoritme import randomWithoutRepeatGuess
+
 
 
 def mastermind():
