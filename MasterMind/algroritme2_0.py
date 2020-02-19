@@ -10,7 +10,7 @@ def delFirstStrat():# gem 5.789 with 1000 tries
     compaired to the first item. Then repeat until it gets the answer.
     '''
     possibilitie=possibilities()
-
+    guess=Answer()
     possibilitie.sort()
     correctAns = answerInput()
     print(guess)

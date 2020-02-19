@@ -17,9 +17,7 @@ def algoritme3():
             print(white, "white")
 
             for item in possibilitie:
-
-                blackP, whiteP = feedback(item,
-                                          guess)  # deletes al items with the same feedback compaired to the guess of the computerer
+                blackP, whiteP = feedback(item,guess)  # deletes al items with the same feedback compaired to the guess of the computerer
 
                 if black != blackP or white != whiteP:
                     newLst.append(item)  # First item removed the item but that made the item from possiblite jump up
@@ -30,6 +28,6 @@ def algoritme3():
             if delItem in possibilitie:
                 possibilitie.remove(delItem)
             for i in possibilitie:
-                for j in possibilitie
-                    black1, white1 = feedback(i,j)
+                for j in possibilitie:
+
                     if

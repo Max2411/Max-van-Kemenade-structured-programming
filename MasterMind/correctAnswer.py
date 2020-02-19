@@ -13,7 +13,7 @@ def answerInput():
 
 
     return answerTuple
-answerInput()
+
 
 def compair(guess,correctAns,tries):
     if guess == correctAns:
