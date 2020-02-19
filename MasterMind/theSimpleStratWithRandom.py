@@ -2,6 +2,8 @@ import random
 from RandAns import Answeraabb
 from possibilities import possibilities
 from Feedback import feedback
+from correctAnswer import answerInput
+from correctAnswer import compair
 from RandAns import Answer
 
 
@@ -9,22 +11,15 @@ def computerGuessVSplayer():# gem is 4.584 with 1000 tries
     "Deletes everything that doesnt get the same feedback. then picks a random number from the list"
     possibilitie=possibilities()
     guess= Answeraabb()
-    print("Enter the code you want the computer to guess on the next line.")
-    answer= input("Choose 4 colours for your code((R)ed, (B)lue, (G)reen, (Y)ellow, (P)ink, (W)hite): ")# the code the computer must guess
-    answer =answer.upper()
-    correctAns= (answer[0],answer[1],answer[2],answer[3])
-    print(correctAns)
+
+    correctAns= answerInput()
     print(guess)
 
     tries=0
     while True:
         tries += 1
         newLst=[]
-        if guess == correctAns:
-            print("-----------")
-            print(guess)
-            print("GG, it took {}".format(tries))
-            print("----------")
+        if compair(guess,correctAns,tries)==True:
             break
         else:
             black, white = feedback(guess, correctAns)#gives feedback for the guess compaired to the answer

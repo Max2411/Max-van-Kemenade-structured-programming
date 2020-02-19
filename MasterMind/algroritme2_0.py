@@ -1,5 +1,7 @@
 from Feedback import feedback
 from possibilities import possibilities
+from correctAnswer import answerInput
+from correctAnswer import compair
 from RandAns import Answer
 
 def delFirstStrat():# gem 5.789 with 1000 tries
@@ -10,23 +12,14 @@ def delFirstStrat():# gem 5.789 with 1000 tries
     possibilitie=possibilities()
 
     possibilitie.sort()
-    guess= possibilitie[0]#guesses the first item out the list.
-    print("Enter the code you want the computer to guess on the next line.")
-    answer= input("Choose 4 colours for your code((R)ed, (B)lue, (G)reen, (Y)ellow, (P)ink, (W)hite): ")
-    answer =answer.upper()
-    correctAns= (answer[0],answer[1],answer[2],answer[3])
-    print(correctAns)
+    correctAns = answerInput()
     print(guess)
 
     tries=0
     while True:
         tries += 1
         newLst=[]
-        if guess == correctAns:
-            print("-----------")
-            print(guess)
-            print("GG, it took {}".format(tries))
-            print("----------")
+        if compair(guess, correctAns, tries) == True:
             break
         else:
             black, white = feedback(guess, correctAns) #gives feedback compaired to the first item
