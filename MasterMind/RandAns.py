@@ -11,9 +11,11 @@ def Answer():
     return answer
 def Answeraabb():
     lst = ['R', 'B', 'G', 'Y', 'P', 'W']
-
-    ranNum1 = random.choice(lst)
-    ranNum2 = random.choice(lst)
+    ranNum1 = ""
+    ranNum2 = ""
+    while ranNum1 == ranNum2:
+        ranNum1 = random.choice(lst)
+        ranNum2 = random.choice(lst)
 
 
     answer = ranNum1, ranNum1, ranNum2, ranNum2  # door getallen in list.
