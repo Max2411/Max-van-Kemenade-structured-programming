@@ -127,5 +127,3 @@ def play_mastermind():
     player_or_computer()
 
 play_mastermind()
-
-
